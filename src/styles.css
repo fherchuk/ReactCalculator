@@ -1,0 +1,94 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-blue: #171c28;
+    --btn-blue:#586B97;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'g7_segment';
+    src: url('../public/g7_segment.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    font-family: 'g7_segment', sans-serif;
+    background: linear-gradient(to bottom, #0a0c37ff, rgb(48, 0, 48));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-header{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    color: rgba(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+
+.calc-grid {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    border-radius: 10px; 
+    gap: 15px; 
+}
+
+
+.calc-grid > button {
+    font-family: 'g7_segment';
+    user-select: none;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #ff61c6ff;
+    border: 2px solid #5cecffff;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(14, 58, 83, 0.75);
+}
+
+.calc-grid > button:hover{
+    background-color: rgba(42, 51, 72, 0.75);
+}
+
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, .75);
+    border: 2px solid #5cecffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+
+}
+
+.output .previous-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color:white;
+    font-size: 3rem;
+}
